@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// auth.routes.ts
+const express_1 = require("express");
+const chatUser_controller_1 = require("../controllers/chatUser.controller");
+const router = (0, express_1.Router)();
+// Explicitly type the handlers as RequestHandler
+router.post("/userChat", chatUser_controller_1.registerChatUser);
+// router.post("/liveChatAI", LiveChatAIHandler as RequestHandler);
+// router.post("/login", login as RequestHandler);
+// router.post("/forgot-password", forgotPassword as RequestHandler);
+exports.default = router;
