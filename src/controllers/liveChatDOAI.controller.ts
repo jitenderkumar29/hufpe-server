@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, RequestHandler } from "express";
+import { RequestHandler } from "express";
 
 const LiveChatDOAIHandler: RequestHandler = async (req, res, next) => {
   try {

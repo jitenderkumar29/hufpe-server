@@ -194,9 +194,7 @@ function detectIntent(message: string): keyof typeof SYSTEM_PROMPTS {
 
 // Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey:
-    process.env.OPENAI_API_KEY ||
-    "sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // replace with secure env in production
+  apiKey: process.env.OPENAI_API_KEY, // replace with secure env in production
   timeout: 10000,
   maxRetries: 2,
 });

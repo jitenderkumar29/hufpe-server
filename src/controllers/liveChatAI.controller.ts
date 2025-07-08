@@ -95,8 +95,7 @@ Guidelines:
 
 // Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY ||
-    "sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // replace with secure env in production
+  apiKey: process.env.OPENAI_API_KEY, // replace with secure env in production
 });
 
 // Conversation history store (in-memory, consider Redis for production)
