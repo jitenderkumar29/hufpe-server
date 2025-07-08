@@ -7,7 +7,6 @@ import chatRoutes from "./routes/chatUser.routes";
 import chatLiveRoutes from "./routes/chatLive.routes";
 import { errorHandler } from "./middlewares/error.middleware";
 // import { errorHandler } from "./middlewares/error.middleware";
-globalThis.fetch = require("node-fetch");
 
 dotenv.config();
 
