@@ -12,6 +12,7 @@ const chatUser_routes_1 = __importDefault(require("./routes/chatUser.routes"));
 const chatLive_routes_1 = __importDefault(require("./routes/chatLive.routes"));
 const error_middleware_1 = require("./middlewares/error.middleware");
 // import { errorHandler } from "./middlewares/error.middleware";
+globalThis.fetch = require("node-fetch");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
