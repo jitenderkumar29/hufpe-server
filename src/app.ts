@@ -16,6 +16,21 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // For form data
 
+// Default route
+app.use("/", (req, res) => {
+  res.json({
+    message: "Welcome to the API",
+    endpoints: {
+      auth: "/api/auth",
+      resources: "/api/resources",
+      chat: "/api/chat",
+      chatLive: "/api/chatLive",
+    },
+    status: "running",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/resources", resourcesRoutes);
 app.use("/api/chat", chatRoutes);
