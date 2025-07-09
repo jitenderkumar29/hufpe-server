@@ -1,6 +1,7 @@
 import { RequestHandler } from "express";
 
 const LiveChatDOAIHandler: RequestHandler = async (req, res, next) => {
+  console.log("LiveChatDOAIHandler Before try req.body:", req.body);
   try {
     const AGENT_ENDPOINT = process.env.AGENT_ENDPOINT;
     const AGENT_ACCESS_KEY = process.env.AGENT_ACCESS_KEY;
@@ -30,7 +31,7 @@ const LiveChatDOAIHandler: RequestHandler = async (req, res, next) => {
     }
 
     const payload = {
-      model: "gpt-4o-mini",
+      // model: "gpt-4o-mini",
       messages,
       stream: false,
       include_functions_info: false,
@@ -48,6 +49,7 @@ const LiveChatDOAIHandler: RequestHandler = async (req, res, next) => {
     });
 
     const responseData = await response.json();
+    console.log("LiveChatDOAIHandler After try responseData:", responseData);
 
     if (!response.ok) {
       console.error("Agent request failed:", {
