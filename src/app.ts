@@ -11,10 +11,18 @@ import { errorHandler } from "./middlewares/error.middleware";
 dotenv.config();
 
 const app = express();
-
-app.use(cors());
+const corsOptions = {
+  origin: "https://hufpe.vercel.app",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+};
+app.use(cors(corsOptions));
+// app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // For form data
+
+// Example of Access Control for Node.js/Express
+// Configure CORS
 
 console.log("🔍 AGENT_ENDPOINT:", process.env.AGENT_ENDPOINT);
 console.log(
