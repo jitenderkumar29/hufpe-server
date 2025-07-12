@@ -5,39 +5,39 @@ import resourcesRoutes from "./routes/resources.routes";
 import chatRoutes from "./routes/chatUser.routes";
 import chatLiveRoutes from "./routes/chatLive.routes";
 import { errorHandler } from "./middlewares/error.middleware";
-import { CorsOptions } from "cors";
 
 const app = express();
 
 // Configure CORS
+console.log();
+// const allowedOrigins = [
+//   "http://localhost:3000/",
+//   "https://hufpe.vercel.app/",
+//   "https://hufpe-app-2l62y.ondigitalocean.app/",
+// ];
 
-const allowedOrigins = [
-  "https://hufpe.vercel.app/",
-  "https://hufpe-app-2l62y.ondigitalocean.app/",
-];
+// const corsOptions: CorsOptions = {
+//   origin: (
+//     origin: string | undefined,
+//     callback: (err: Error | null, allow?: boolean) => void
+//   ) => {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//       console.log(error);
+//     }
+//   },
+//   credentials: true,
+// };
+// app.use(cors(corsOptions));
 
-const corsOptions: CorsOptions = {
-  origin: (
-    origin: string | undefined,
-    callback: (err: Error | null, allow?: boolean) => void
-  ) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // For form data
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello, Welcome to HufPe Services!");
 });
 
 app.use("/api/auth", authRoutes);
